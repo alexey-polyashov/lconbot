@@ -1,29 +1,4 @@
-server:
-  port: 8080
-
-spring:
-
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=lconbot}
-    username: postgres
-    password: pgadmin
-
-  jpa:
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        ddl-auto: update
-
 telegram:
   api-url: https://api.telegram.org/
-  webhook-path: {$telegram-web-hook-path} # https://api.telegram.org/bot5128213958:AAERMqZfvd5YsTwGRUAnYqsCBHu_2iMR6DM/setWebhook?url=https://4727-46-138-30-102.eu.ngrok.io
+  webhook-path: ${telegram-web-hook-path} # https://api.telegram.org/bot5128213958:AAERMqZfvd5YsTwGRUAnYqsCBHu_2iMR6DM/setWebhook?url=https://4727-46-138-30-102.eu.ngrok.io
 
-yandex:
-  api-weather-url: https://api.weather.yandex.ru/v2/informers
-
-dadata:
-  geocod-url: https://cleaner.dadata.ru/api/v1/clean/address
