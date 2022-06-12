@@ -44,17 +44,12 @@ public class TlgStateMachineConfig extends EnumStateMachineConfigurerAdapter<Bot
 
     @Override
     public void configure(final StateMachineTransitionConfigurer<BotState, BotEvent> transitions) throws Exception {
-        transitions
-//                .withExternal()
-//                .source(BotState.INIT)
-//                .target(BotState.STARTED)
-//                .event(BotEvent.INIT_START)
-//                .action(registerNewUser(), errorAction())
 
+        transitions
                 .withExternal()
+                .source(BotState.INIT)
                 .target(BotState.STARTED)
                 .event(BotEvent.INIT_START)
-//                .event(BotEvent.SEND_TEXT).event(BotEvent.SEND_COMMAND)
                 .action(registerNewUser(), errorAction())
 
                 .and()

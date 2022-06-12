@@ -39,7 +39,7 @@ spring:
 
 telegram:
   api-url: https://api.telegram.org/
-  webhook-path: https://b3ad-46-138-30-102.eu.ngrok.io #https://4c17-46-138-30-102.eu.ngrok.io # https://api.telegram.org/bot5524243468:AAFIz6b8Vt5AQyBY5_P6ISECADvpvRlliu4/setWebhook?url=https://b3ad-46-138-30-102.eu.ngrok.io
+  webhook-path: https://304f-46-138-30-102.eu.ngrok.io #https://4c17-46-138-30-102.eu.ngrok.io # https://api.telegram.org/bot5524243468:AAFIz6b8Vt5AQyBY5_P6ISECADvpvRlliu4/setWebhook?url=https://b3ad-46-138-30-102.eu.ngrok.io
 
 yandex:
   api-weather-url: https://api.weather.yandex.ru/v2/informers

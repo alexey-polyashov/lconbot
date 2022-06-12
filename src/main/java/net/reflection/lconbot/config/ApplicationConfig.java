@@ -3,7 +3,6 @@ package net.reflection.lconbot.config;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.statemachine.config.EnableStateMachine;
 import org.telegram.telegrambots.meta.api.methods.updates.SetWebhook;
 import net.reflection.lconbot.bot.LconBot;
 import net.reflection.lconbot.bot.TelegramFacade;
@@ -31,7 +30,5 @@ public class ApplicationConfig {
 
         return bot;
     }
-
-
 
 }

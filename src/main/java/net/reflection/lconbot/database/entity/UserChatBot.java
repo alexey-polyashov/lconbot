@@ -26,7 +26,7 @@ public class UserChatBot {
     private String botState;
 
     @Column(name="bot_state_step_number")
-    private Integer botStateStepNumber;
+    private String botStateStepNumber;
 
     @Column(name="emotion_level")
     private Integer emotionLevel;

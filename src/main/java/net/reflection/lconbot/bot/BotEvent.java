@@ -1,6 +1,7 @@
 package net.reflection.lconbot.bot;
 
 public enum BotEvent {
+    UNKNOWN,
     SEND_TEXT,
     SEND_AUDIO,
     SEND_IMAGE,
@@ -9,5 +10,5 @@ public enum BotEvent {
     INIT_START,
     START_COMPLEET,
     STOP_COURSE,
-    REMIND;
+    REMIND
 }
