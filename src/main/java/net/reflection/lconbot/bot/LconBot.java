@@ -11,7 +11,7 @@ import org.telegram.telegrambots.starter.SpringWebhookBot;
 
 @Getter
 @Setter
-public class MeteoBot extends SpringWebhookBot {
+public class LconBot extends SpringWebhookBot {
 
     private String botPath;
     private String botUserName;
@@ -20,11 +20,11 @@ public class MeteoBot extends SpringWebhookBot {
     private TelegramFacade telegramFacade;
 
 
-    public MeteoBot(TelegramFacade telegramFacade, DefaultBotOptions options, SetWebhook setWebhook) {
+    public LconBot(TelegramFacade telegramFacade, DefaultBotOptions options, SetWebhook setWebhook) {
         super(options, setWebhook);
         this.telegramFacade = telegramFacade;
     }
-    public MeteoBot(TelegramFacade telegramFacade, SetWebhook setWebhook) {
+    public LconBot(TelegramFacade telegramFacade, SetWebhook setWebhook) {
         super(setWebhook);
         this.telegramFacade = telegramFacade;
     }

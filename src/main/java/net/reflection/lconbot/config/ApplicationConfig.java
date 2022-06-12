@@ -3,8 +3,9 @@ package net.reflection.lconbot.config;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.statemachine.config.EnableStateMachine;
 import org.telegram.telegrambots.meta.api.methods.updates.SetWebhook;
-import net.reflection.lconbot.bot.MeteoBot;
+import net.reflection.lconbot.bot.LconBot;
 import net.reflection.lconbot.bot.TelegramFacade;
 
 
@@ -20,9 +21,9 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public MeteoBot springWebhookBot(SetWebhook setWebhook, TelegramFacade telegramFacade) {
+    public LconBot springWebhookBot(SetWebhook setWebhook, TelegramFacade telegramFacade) {
 
-        MeteoBot bot = new MeteoBot(telegramFacade, setWebhook);
+        LconBot bot = new LconBot(telegramFacade, setWebhook);
 
         bot.setBotPath(telegramConfig.getWebhookPath());
         bot.setBotUserName(telegramConfig.getBotUserName());
@@ -30,6 +31,7 @@ public class ApplicationConfig {
 
         return bot;
     }
+
 
 
 }

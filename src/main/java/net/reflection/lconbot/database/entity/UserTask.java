@@ -1,46 +1,45 @@
-package net.reflection.lconbot.entity;
+package net.reflection.lconbot.database.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-@Table(name = "course_stages")
+@Table(name = "user_tasks")
 @Getter
 @Setter
 @NoArgsConstructor
-public class CourseStage {
+public class UserTask {
 
-    @Column(name="course_id")
-    Long courseId;
+    @Column(name = "chat_user_id")
+    Long chatUserId;
 
-    @Column(name="presentation")
-    String presentation;
+    @Column(name="task_id")
+    Long taskId;
 
-    @Column(name="description")
-    String description;
+    @Column(name="answer_variant_id")
+    Long answerVariantId;
 
-    @Column(name="duration")
-    Integer duration; //ih hours
+    @Column(name="state")
+    String state;
 
-    @OneToMany
-    @JoinColumn (name="stage_id")
-    List<CourseLesson> lessons;
+    @Column(name="cost")
+    Integer cost;
+
+    @Column(name="completion_date")
+    Date completionDate;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "deletion_mark")
-    @ColumnDefault("false")
-    private Boolean deletionMark = false;
+
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createTime;

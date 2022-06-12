@@ -1,4 +1,4 @@
-package net.reflection.lconbot.entity;
+package net.reflection.lconbot.database.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,14 +8,15 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Time;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user_plan")
+@Table(name = "user_courses")
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserPlan {
+public class UserCourses {
 
     @Column(name="chat_user_id")
     Long chatUserId;
@@ -23,13 +24,29 @@ public class UserPlan {
     @Column(name="course_id")
     Long courseId;
 
-    @Column(name="stage_id")
-    Long stageId;
+    @Column(name="state")
+    String state;
 
-    @Column(name="lesson_id")
-    Long lessonId;
+    @Column(name="begin_date")
+    Date beginDate;
 
-    Date date;
+    @Column(name="completion_date")
+    Date completionDate;
+
+    @Column(name="active_stage_id")
+    Long activeStageId;
+
+    @Column(name="lesson_count")
+    Integer lessonCount;
+
+    @Column(name="first_week_day")
+    Integer firstWeekDay;
+
+    @Column(name="lesson_time")
+    Time lessonTime;
+
+    @Column(name="remind_on")
+    Time remindOn;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

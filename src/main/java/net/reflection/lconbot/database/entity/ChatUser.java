@@ -1,4 +1,4 @@
-package net.reflection.lconbot.entity;
+package net.reflection.lconbot.database.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,17 +10,17 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "chat_users")
 @Getter
 @Setter
-@NoArgsConstructor
 public class ChatUser {
 
     @Column(name = "telegram_id")
-    String telegramId;
+    Long telegramId;
 
     @Column(name = "name")
     String name;
@@ -59,6 +59,10 @@ public class ChatUser {
     @JoinColumn(name = "chat_user_id")
     List<UserAchievements> tasks;
 
+    @OneToMany
+    @JoinColumn(name = "chat_user_id")
+    List<UserChatBot> bots;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -73,4 +77,11 @@ public class ChatUser {
     @Column(name = "updated_at")
     private LocalDateTime updateTime;
 
+    public ChatUser() {
+        this.courses = new ArrayList<>();
+        this.purposes = new ArrayList<>();
+        this.aghievements = new ArrayList<>();
+        this.tasks = new ArrayList<>();
+        this.bots = new ArrayList<>();
+    }
 }

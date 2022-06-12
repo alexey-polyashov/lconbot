@@ -1,4 +1,4 @@
-package net.reflection.lconbot.entity.enums;
+package net.reflection.lconbot.database.entity.enums;
 
 public enum TaskState {
     COMPLETED, IN_PROGRESS, SKIPPED

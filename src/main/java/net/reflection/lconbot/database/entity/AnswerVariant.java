@@ -1,5 +1,4 @@
-package net.reflection.lconbot.entity;
-
+package net.reflection.lconbot.database.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,42 +9,19 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-@Table(name = "tasks")
+@Table(name = "answer_variants")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Task {
+public class AnswerVariant {
 
-    @Column(name="course_id")
-    Long courseId;
-
-    @Column(name="stage_id")
-    Long stageId;
-
-    @Column(name="lesson_id")
-    Long lessonId;
+    @Column(name="task_id")
+    Long taskId;
 
     @Column(name="presentation")
     String presentation;
-
-    @Column(name="description")
-    String description;
-
-    @Column(name="type")
-    String type;
-
-    @Column(name="duration")
-    Integer duration;
-
-    @OneToMany
-    @JoinColumn(name = "task_id")
-    List<AnswerVariant> answers;
-
-    @Column(name="cost")
-    Integer cost;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

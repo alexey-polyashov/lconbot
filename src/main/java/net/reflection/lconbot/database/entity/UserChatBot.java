@@ -1,4 +1,4 @@
-package net.reflection.lconbot.entity;
+package net.reflection.lconbot.database.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,33 +7,26 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user_courses")
+@Table(name = "user_chat_bots")
 @Getter
 @Setter
 @NoArgsConstructor
-public class UserCourses {
+public class UserChatBot {
+
+    @Column(name="bot_id")
+    private Long botId;
 
     @Column(name="chat_user_id")
-    Long chatUserId;
+    private Long chatUserId;
 
-    @Column(name="course_id")
-    Long courseId;
+    @Column(name="bot_state")
+    private String botState;
 
-    @Column(name="state")
-    String state;
-
-    @Column(name="begin_date")
-    Date beginDate;
-
-    @Column(name="completion_date")
-    Date completionDate;
-
-    @Column(name="active_stage_id")
-    Long activeStageId;
+    @Column(name="bot_state_step_number")
+    private Integer botStateStepNumber;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,5 +39,4 @@ public class UserCourses {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updateTime;
-
 }
