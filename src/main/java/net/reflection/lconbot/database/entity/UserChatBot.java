@@ -28,6 +28,12 @@ public class UserChatBot {
     @Column(name="bot_state_step_number")
     private Integer botStateStepNumber;
 
+    @Column(name="emotion_level")
+    private Integer emotionLevel;
+
+    @Column(name="achiev_level")
+    private Integer achievLevel;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
